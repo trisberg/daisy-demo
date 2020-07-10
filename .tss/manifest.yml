@@ -1,0 +1,7 @@
+applications:
+- framework: spring
+  guid: ea3838ee-8805-4d9d-a36b-dcaf33576d6f
+  language: java
+  name: hello-fun
+  service: [
+    ]
