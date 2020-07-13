@@ -1,1 +1,3 @@
 # my-fun
+
+Simple function
