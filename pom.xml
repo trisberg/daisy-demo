@@ -7,9 +7,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>hello-app</artifactId>
+	<artifactId>my-fun</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>hello-app</name>
+	<name>my-fun</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
@@ -67,38 +67,39 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
-		</plugins>
+			</plugins>
 	</build>
 
 <profiles>
-      <profile>
-        <id>local</id>
-        <build>
-            <plugins>
-                <plugin>
-                    <groupId>com.google.cloud.tools</groupId>
-                    <artifactId>jib-maven-plugin</artifactId>
-                    <version>1.4.0</version>
-                    <configuration>
-                        <container>
-                            <useCurrentTimestamp>true</useCurrentTimestamp>
-                        </container>
-                        <to>
-                            <!-- TODO parameterize -->
-                            <image>lift/hello-app</image>
-                            <tags>0.0.1-SNAPSHOT</tags>
-                        </to>
-                    </configuration>
-                    <executions>
-                        <execution>
-                            <phase>package</phase>
-                            <goals>
-                                <goal>dockerBuild</goal>
-                            </goals>
-                        </execution>
-                    </executions>
-                </plugin>
-            </plugins>
-        </build>
-      </profile>
-    </profiles></project>
+	  <profile>
+		<id>local</id>
+		<build>
+			<plugins>
+				<plugin>
+					<groupId>com.google.cloud.tools</groupId>
+					<artifactId>jib-maven-plugin</artifactId>
+					<version>1.4.0</version>
+					<configuration>
+						<container>
+							<useCurrentTimestamp>true</useCurrentTimestamp>
+						</container>
+						<to>
+							<!-- TODO parameterize -->
+							<image>my-fun</image>
+							<tags>0.0.1-SNAPSHOT</tags>
+						</to>
+					</configuration>
+					<executions>
+						<execution>
+							<phase>package</phase>
+							<goals>
+								<goal>dockerBuild</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+			</plugins>
+		</build>
+	  </profile>
+	</profiles>
+</project>
